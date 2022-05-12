@@ -362,7 +362,7 @@ GDK_API int GA_get_receive_address(struct GA_session* session, const GA_json* de
  *|     Returned GA_auth_handler should be freed using `GA_destroy_auth_handler`.
  *
  * .. note:: Iteration of all addresses is complete when the results 'last_pointer'
- *|     value equals 1.
+ *|     value equals ``null``.
  */
 GDK_API int GA_get_previous_addresses(
     struct GA_session* session, const GA_json* details, struct GA_auth_handler** call);

@@ -891,10 +891,10 @@ Contains the query parameters for requesting previously generated addresses usin
   }
 
 :subaccount: The value of "pointer" from :ref:`subaccount-list` or :ref:`subaccount-detail` for the subaccount to fetch addresses for. Default 0.
-:last_pointer: The address pointer from which results should be returned. Passing 0 (the default) returns
+:last_pointer: The address pointer from which results should be returned. Passing ``null`` (the default) returns
                the newest generated addresses. The "last_pointer" value from the resulting :ref:`previous-addresses`
                should then be given, until sufficient pages have been fetched or the "last_pointer" value
-               is 1 indicating all addresses have been fetched.
+               is ``null`` indicating all addresses have been fetched.
 
 
 
@@ -908,7 +908,7 @@ Contains a page of previously generated addresses, from newest to oldest.
 .. code-block:: json
 
   {
-    "last_pointer": 1,
+    "last_pointer": null,
     "list": [
       {
         "address": "2N52RVsChsCi439PpJ1Hn8fHCiTrRjcAEiL",
@@ -938,7 +938,7 @@ Contains a page of previously generated addresses, from newest to oldest.
 
 :last_pointer: Contains the next_pointer value to pass in :ref:`previous-addresses-request` in a
                subsequent call to `GA_get_previous_addresses` in order to fetch the next page.
-               Will be 1 when all addresses have been fetched.
+               Will be ``null`` when all addresses have been fetched.
 :list: Contains the current page of addresses in :ref:`receive-address-details` format.
 :subaccount: The subaccount which the generated addresses belong to.
 

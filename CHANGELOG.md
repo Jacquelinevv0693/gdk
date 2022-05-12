@@ -1,5 +1,12 @@
 # Changelog
 
+## Release 0.0.55
+
+### Changed
+
+- GA_get_previous_addresses: use null as a sentinel value, instead of 0 and 1. Passing "last_pointer" null returns the newest generated addresses; if the returned "last_pointer" value is null, it indicates that all addresses have been fetched.
+
+
 ## Release 0.0.54 - 2022-05-13
 
 ### Added
