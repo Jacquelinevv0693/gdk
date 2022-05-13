@@ -982,6 +982,16 @@ pub struct PreviousAddress {
     /// The number of transactions where either an input or an output has a script pubkey matching
     /// this address.
     pub tx_count: u32,
+
+    // Liquid fields, None if Liquid
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub is_blinded: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub unblinded_address: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub blinding_key: Option<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, Default, PartialEq, Eq)]
